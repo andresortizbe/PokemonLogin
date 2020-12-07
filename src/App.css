@@ -1,0 +1,36 @@
+.pokeLogo
+{
+  margin-top: -60px;
+  background-image: url(https://lh3.googleusercontent.com/proxy/R92XJjihbDdnknha_u7KXPbWCt3I6nKA8kij4vG3I8LKRnbFLFgrK77wKvo-B6Nb5S6HmKFokoW8njyXAg8MyvMUpfdyZuD30PFdY2kFYyLIbYRab92cqxQGQNNrz7rrNIZGgqUhncr65vImeoP3DctVVA);
+  width: 500px;
+  height: 150px;
+  background-repeat: no-repeat;
+}
+.navbar-container{
+  background-color: #fe0000;
+  padding: 1em 0em;
+  box-sizing: content-box;
+}
+
+.navbar{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar a{
+  color: #FFF;
+  text-decoration:none;
+  font-size: 40px;
+  
+}
+.pokeIconLock
+{
+  background-image: url(https://i.dlpng.com/static/png/6555130_preview.png);
+  width: 500px;
+  height: 150px;
+}
+.colorButton
+{
+  background-color: #fe0000;
+}

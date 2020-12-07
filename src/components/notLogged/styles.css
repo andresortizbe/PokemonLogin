@@ -1,0 +1,62 @@
+.t-col-container {
+    
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 95vh;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    "pagination pagination pagination";
+   
+}
+.aboutContainer {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:". .";
+   
+}
+.pagination 
+{ 
+    margin-top:-5%; 
+    grid-area: pagination; 
+
+   
+    
+}
+.pokeCon{
+    
+    display: block;
+    max-width: 10%;
+    border: black;
+}
+.pokeAbout{
+    
+    display: block;
+    max-width: 70%;
+    border: black;
+
+}
+.pokeAbout2{
+    margin-top: 45vh;
+    margin-left: -28vh;
+    display: block;
+    max-width: 150%;
+    border: black;
+
+}
+
+.text
+{
+    margin-left: 10px;
+    margin-top: 40px;
+    color:white;
+    font-size: 60px;
+
+}

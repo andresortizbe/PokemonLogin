@@ -1,0 +1,21 @@
+.login
+{
+    
+    box-sizing: border-box;
+    display: grid;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+.signUp
+{
+    margin-top: -60px;
+    margin-left: 150px;
+    background-color: rgba(255,255,255,0.5);
+}
+.signIn
+{
+    margin-top: -60px;
+    margin-left: 150px;
+    background-color: rgba(255,255,255,0.5);
+}

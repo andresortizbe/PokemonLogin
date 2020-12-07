@@ -1,0 +1,249 @@
+
+.img4{
+  width: 30%;
+  margin-left: 150px;
+  margin-top: -20px;
+  
+}
+.zoom{
+  transition: 1.5s ease;
+   -moz-transition: 1.5s ease; /* Firefox */
+   -webkit-transition: 1.5s ease; /* Chrome - Safari */
+   -o-transition: 1.5s ease; /* Opera */
+}
+.zoom:hover{
+  transform : scale(1.3);
+  -moz-transform : scale(1.5); /* Firefox */
+  -webkit-transform : scale(1.5); /* Chrome - Safari */
+  -o-transform : scale(2); /* Opera */
+  -ms-transform : scale(2); /* IE9 */
+}
+.details-cont
+{
+  margin-top:40px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('back.jpg');
+  
+}
+.detailTitle
+{
+  color: WHite;
+  margin-left:50px;
+  font-size: bolder;
+}
+.typeContainer{
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+.typePoke
+{ display: grid;
+  margin-left: 30px;
+  font-size: 30px;
+  width: 50%;
+  height: 50%;
+ 
+}
+.divider
+{
+  display: grid;
+  grid-template-columns: 0.7fr 0.3fr;
+  justify-content: space-around;
+}
+.typeTitle
+{
+  margin-left:-100%;
+}
+.grass{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('grass.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.fire{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('fire.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.bug{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('bug.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.normal{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('normal.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.flying{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('flying.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.electric{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('electric.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.ground{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('ground.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.fairy{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('fairy.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.water{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('water.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.fighting{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('fighting.jpg');
+  width: 30%;
+  height:170%;
+  
+
+}
+.psychic{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('psychic.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.ghost{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('ghost.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.ice{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('ice.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.rock{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('rock.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.dragon{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('dragon.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.dark{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('dark.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+.steel{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('steel.png');
+  width: 30%;
+  height:170%;
+  
+
+}
+
+.poison{
+  margin-top:-20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('poison.png');
+  width: 30%;
+  height:170%;
+    
+
+}
+.statsContainer
+{
+margin-top:20px;
+margin-bottom: 20px;
+ margin-left: 20px;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+}
+
+  
