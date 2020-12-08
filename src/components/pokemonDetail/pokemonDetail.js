@@ -7,7 +7,6 @@ export default function PokemonDetails(props){
     let [pokemonDetails, setPokemonDetails] = useState([]);
     let [pokemonStats, setPokemonStats] = useState([]);
     let [gifExist, setGifExist] = useState(false);
-    let [urlExist, setUrlExist] = useState(false);
     let [url,setUrl]=useState("");    
     
 
@@ -34,20 +33,7 @@ export default function PokemonDetails(props){
 
                 })
     
-                fetch(props.url)
-                .then(response => response.blob())
-                .then(data => {
-                    console.log(data.type)
-                    if(data.type === 'image/gif') {
-                        setUrlExist(true);
-                    }
-                    // const image = URL.createObjectURL(data)
-                    // console.log(image)
-                })
-                .catch(error => {
-                    
-                    this.setState({urlExist:false})
-                })
+                
 
                 let gifUrl='./img/pokeGif/'+props.name+'.gif';
                 let url = gifExist ? gifUrl :props.img; 

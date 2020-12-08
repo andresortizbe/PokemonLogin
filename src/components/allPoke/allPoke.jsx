@@ -31,7 +31,6 @@ export default function AllPoke(props) {
       let data = results.data.results;
       setPokemones(data);
     };
-
     getPokemons();
   }, []);
 
@@ -40,9 +39,9 @@ export default function AllPoke(props) {
     paginationChange(currentPage);
   }
 
-  function paginationChange(currentPage) {
+  function paginationChange() {
     let pages = [];
-
+    let currentPage= pokePage;
     let sup = currentPage + 4;
     let inf = currentPage - 5;
 

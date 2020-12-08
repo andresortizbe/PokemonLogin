@@ -8,16 +8,10 @@ export default function PrimaryCol ()
 {
     
     let[pokemones,setPokemones]=useState([]);
-    let [pokemonPerPage,setPokemonPerPage]=useState(10);
+    let pokemonPerPage=10;
     let [pokePage,setPokePage]=useState(1);
     let[pokePagination,setPokePagination]=useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); 
-    let[pokeData,setPokeData]=useState([]);
-    let[details,setDetails]=useState([]);
-    let[urlExist,setUrlExist]=useState(false);
-    let [urlAltPok,setUrlAltPok]=useState("");        
-        
     
-
     useEffect( () => 
         {
         const limit = pokemonPerPage;
@@ -29,31 +23,10 @@ export default function PrimaryCol ()
             .catch(error => {
                 console.log(error);
             })
-           cargarTodo();
+           
           }, []);
 
-    function cargarTodo()
-     {
-         console.log("cargando esta monda");
-        fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1050")
-            .then(response => response.json())
-            .then(dato => setPokeData(dato.results.url))
-            .catch(error => {
-                console.log(error);
-            })
-
-        pokemones.map  ((pokemon,index)=>
-        {
-            fetch(pokemon.url)
-            .then(response => response.json())
-            .then(dato => setDetails(dato.types[0].type.name))
-            .catch(error => {
-                console.log(error);
-            })
-            return true;
-        })
-        
-        }
+    
      
      
     
