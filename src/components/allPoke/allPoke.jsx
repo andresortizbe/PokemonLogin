@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
-import PaginationI from "./PaginationI";
+import Page from "./Page";
 import "./pokeStyle.css";
 
 export default function AllPoke(props) {
@@ -100,7 +100,7 @@ export default function AllPoke(props) {
         })}
       </div>
       <div className="paginationI">
-        <PaginationI fetchPageFn={fetchPage} pokePagination={pokePagination} />
+        <Page fetchPageFn={fetchPage} pokePagination={pokePagination} />
       </div>
     </div>
   );

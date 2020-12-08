@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PaginationI(props){
+export default function Page(props){
     
     
     
@@ -16,5 +16,3 @@ function PaginationI(props){
         </div>
     )
 }
-
-export default PaginationI;

@@ -1,8 +1,5 @@
 import React, {useState} from "react";
 import './App.css';
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-import Panel from "./components/Panel";
 import Sidebar from './components/sidebar/sidebar';
 import Main from './components/main/main';
 
@@ -51,10 +48,8 @@ export default function App ()
     
     return (
             <div className="App">
-              
-                <Sidebar clickPoke={showPoke} clickAbout={showAbo}/>
-                
-                <Main show={showPok} about={showAbout} />
+                 <Sidebar clickPoke={showPoke} clickAbout={showAbo}/>
+                 <Main show={showPok} about={showAbout} />
             </div>
         )
 }
