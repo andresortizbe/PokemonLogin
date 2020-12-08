@@ -1,11 +1,7 @@
 import React, {useState} from "react";
 import './App.css';
-import firebase, {auth} from "./firebase/config";
 import SignIn from "./components/SignIn";
-import {Route, Switch, useHistory} from "react-router-dom";
-
 import SignUp from "./components/SignUp";
-import PrivateRoute from "./components/PrivateRoute";
 import Panel from "./components/Panel";
 import Sidebar from './components/sidebar/sidebar';
 import Main from './components/main/main';
