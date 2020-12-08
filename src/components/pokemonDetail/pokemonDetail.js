@@ -63,8 +63,8 @@ export default function PokemonDetails(props){
                 <img className="img4 zoom" src={url} alt={props.name} />
                 <div className="typeContainer">
                         {
-                          pokemonStats.map((poke)=>{
-                           return( <div className="divider"><div 
+                          pokemonStats.map((poke, index)=>{
+                           return( <div className="divider" key={index}><div 
                             className={`typePoke ${poke.type.name} && 'poke.type.name'}`}></div>
                                       <h3 className="typeTitle">{poke.type.name.toUpperCase()}</h3>
                                       </div>)
@@ -75,14 +75,14 @@ export default function PokemonDetails(props){
                 </div>
                     <div className="statsContainer">
                         {
-                          pokemonDetails.map((poke)=>{
-                           return( <div className="statsContainer">
+                          pokemonDetails.map((poke,index)=>{
+                           return( <div className="statsContainer" key={index}>
                                         <h6>{poke.stat.name.toUpperCase()}</h6>
                                         <progress  id="poke.base_stat" 
                                                   max="100" 
                                                   value={poke.base_stat}> 
                                                   "70%" </progress>
-                                                  <h7 className="valueBar">{poke.base_stat}</h7>
+                                                  <h6 className="valueBar">{poke.base_stat}</h6>
                                     </div>    
                                  )
                             

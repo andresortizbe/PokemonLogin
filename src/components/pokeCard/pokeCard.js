@@ -57,7 +57,9 @@ function handleCloseModal ()  {
             <img className="details" src={'/img/icons/pokedex.png'} alt="detalles" onClick={handleOpenModal}/>
             <Modal isOpen={showModal} style={customStyles}>
             <img className="details2" src={'/img/icons/pokedex.png'} alt="about" onClick={handleCloseModal}/>
-                    <PokemonDetails code={pokeCode(props.img)} 
+                    <PokemonDetails 
+                    key={pokeCode(props.img)} 
+                    code={pokeCode(props.img)} 
                     img={props.img} 
                     name={props.name}
                     url={props.url}

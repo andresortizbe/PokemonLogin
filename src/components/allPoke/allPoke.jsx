@@ -80,6 +80,7 @@ export default function AllPoke(props) {
           return (
             <div className="pokeGrid">
               <Link
+                key={pokemon.name}
                 to={{
                   pathname: `/pokemones/${pokemon.name}`,
                   state: { isLogged: true },
