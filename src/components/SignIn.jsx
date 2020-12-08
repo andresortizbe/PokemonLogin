@@ -11,7 +11,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import auth  from "../firebase/config";
+import firebase  from "../firebase/config";
 import 'fontsource-roboto';
 import './configSty.css';
 
@@ -52,17 +52,20 @@ const handlePassword = (event) => {
   setpassword(text)
 
 };
-  const login = (event) => {
+  const login = (event) => 
+  {
     event.preventDefault();
-    auth
-      .signInWithEmailAndPassword(`${email}`,`${password}`)
-      .then((response) => {console.log(response);
-        props.setIsLogged(true);
-      alert('iniciaste sesion')})
+    firebase.auth().signInWithEmailAndPassword(`${email}`,`${password}`)
+      .then((response) => 
+          {
+            console.log(response);
+            props.setIsLogged(true);
+            props.history.push('/pokeDex');
+          })
       .catch((error) =>{ console.log(error);
         alert(error.message)});
-  };
-
+ };
+    
   return (
     <div className="signIn"> 
     <Container component="main" maxWidth="xs">

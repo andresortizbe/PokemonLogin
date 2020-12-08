@@ -57,7 +57,7 @@ function Main (props) {
     {
       <Switch>
         <Route path="/" exact>
-            <SignIn signInGoogle={signInGoogle} signInFacebook={signInFacebook} setIsLogged={setIsLogged}/>
+            <SignIn signInGoogle={signInGoogle} signInFacebook={signInFacebook} setIsLogged={setIsLogged} history={history}/>
         </Route>
         
         <Route path="/Registro" exact>
