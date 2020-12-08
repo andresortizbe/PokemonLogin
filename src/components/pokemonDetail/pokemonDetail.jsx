@@ -11,7 +11,16 @@ export default function PokemonDetails(props){
     
 
     useEffect( () => 
-            {fetch(props.url)
+            {
+                const generarUrl=() =>
+                    {
+                        let gifUrl='./img/pokeGif/'+props.name+'.gif';
+                        let url = gifExist ? gifUrl :props.img; 
+                        setUrl(url);
+                        
+                    };
+                    generarUrl();  
+                fetch(props.url)
                 .then(response => response.json())
                 .then(data => setPokemonDetails(data.stats ))
                 .catch(error => {
@@ -30,15 +39,8 @@ export default function PokemonDetails(props){
                     if(data.type === 'image/gif') {
                         setGifExist(true);
                     }
-
                 })
-    
-                
-
-                let gifUrl='./img/pokeGif/'+props.name+'.gif';
-                let url = gifExist ? gifUrl :props.img; 
-                setUrl(url);
-            }, []);
+            }, );
 
  
         
