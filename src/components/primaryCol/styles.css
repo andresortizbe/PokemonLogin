@@ -3,7 +3,7 @@
     overflow: scroll;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 95vh;
+    height: 90vh;
     width: 1200px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -43,6 +43,10 @@
     border: black;
 
 }
+.flag
+{
+    margin-top:-80px;
+}
 .textAbout
 {
     margin-top: 15vh;
@@ -54,7 +58,7 @@
 .textAbout2
 {
     margin-top: 40vh;
-    margin-left: -28vh;
+    margin-left: -38vh;
     color:black;
     font-size: 100px;
 

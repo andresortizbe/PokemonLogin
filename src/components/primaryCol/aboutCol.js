@@ -24,7 +24,7 @@ export default class PrimaryCol extends React.Component {
                 <div className="about-Cont">
                     <img className="pokeAbout" src='/img/back/pokedeex.png' alt="profile"/>
                     <img className="pokeAbout" src='/img/back/dexd.png' alt="profile"/>
-                    <img className="pokeAbout" src='/img/back/flag.png' alt="profile"/>
+                    <img className="pokeAbout flag" src='/img/back/flag.png' alt="profile"/>
                </div>
                
                <div className="detailsAbout">

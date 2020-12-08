@@ -1,8 +1,9 @@
 
 .img4{
-  width: 30%;
+  width: 20%;
   margin-left: 150px;
   margin-top: -20px;
+  margin-bottom: 20px ;
   
 }
 .zoom{
@@ -18,12 +19,11 @@
   -o-transform : scale(2); /* Opera */
   -ms-transform : scale(2); /* IE9 */
 }
-.details-cont
+.detailsCont
 {
-  margin-top:40px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-image: url('back.jpg');
+  margin-top:10px;
+  margin-left:60px;
+  background-color: rgba(255,255,255,0.5);
   
 }
 .detailTitle
@@ -40,6 +40,7 @@
 }
 .typePoke
 { display: grid;
+  
   margin-left: 30px;
   font-size: 30px;
   width: 50%;

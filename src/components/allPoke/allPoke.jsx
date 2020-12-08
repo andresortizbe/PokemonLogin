@@ -105,7 +105,7 @@ export default function AllPoke(props) {
     <div className="izquierda">
      
       <img className="title" src="img/back/pokBack.png" alt="title" />
-      <div  class="pokemonContainerG">
+      <div  className="pokemonContainerG">
         {pokemones.map((pokemon, index) => {
           
           let url='./img/pokeGif/'+pokemon.name+'.gif';

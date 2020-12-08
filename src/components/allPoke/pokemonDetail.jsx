@@ -11,8 +11,7 @@ export default class pokemonDetail extends React.Component {
         this.state = {
             pokemonDetails: [],
             pokemonStats:[],
-            gifExist:false,
-            urlExist:false,
+            
         }
     }
     componentDidMount() {
@@ -20,7 +19,18 @@ export default class pokemonDetail extends React.Component {
         let url="https://pokeapi.co/api/v2/pokemon/"+this.props.pokemonName;
         fetch(url)
             .then(response => response.json())
-            .then(data => this.setState({ pokemonDetails: data.stats }))
+            .then(data =>   {
+
+                             this.setState({ pokemonDetails: data.stats })
+                             console.log("el estado chimbo  "+ JSON.stringify(this.state.pokemonDetails));
+                            }
+             )
+            .catch(error => {
+                console.log(error);
+            })
+            fetch(url)
+            .then(response => response.json())
+            .then(data => this.setState({ pokemonStats: data.types }))
             .catch(error => {
                 console.log(error);
             })
@@ -34,7 +44,7 @@ export default class pokemonDetail extends React.Component {
         console.log(gifUrl);
         
         return (
-            <div className="details-cont"><h2 className="detailTitle">{"  "+this.props.pokemonName.toUpperCase()}</h2>.
+            <div className="detailsCont"><h2 className="detailTitle">{"  "+this.props.pokemonName.toUpperCase()}</h2>.
                 <div className="img-cont">
                 <img className="img4 zoom" src={gifUrl} alt={this.props.pokemonName} />
                 <div className="typeContainer">
@@ -58,7 +68,7 @@ export default class pokemonDetail extends React.Component {
                                                   max="100" 
                                                   value={poke.base_stat}> 
                                                   "70%" </progress>
-                                                  <h7 className="valueBar">{poke.base_stat}</h7>
+                                                  <h6 className="valueBar">{poke.base_stat}</h6>
                                     </div>    
                                  )
                             

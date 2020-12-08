@@ -40,8 +40,8 @@
 }
 .paginationI 
 { 
-    margin-top:-8%;
-     
+    margin-top:-8px;
+    
     grid-area: pagination; 
 
    
