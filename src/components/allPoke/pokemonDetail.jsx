@@ -11,7 +11,12 @@ export default function PokemonDetail (props) {
 
     useEffect(() => {  
     fetchPokemon();        
-        
+    const generarUrl=() =>
+    {
+        let gifUrl='../img/pokeGif/'+props.pokemonName+'.gif';
+        setPokeUrl(gifUrl);
+    };
+    generarUrl();    
                  
     });
 
@@ -26,13 +31,9 @@ export default function PokemonDetail (props) {
         let response2 = await fetch(url);
         data=await response2.json();
         setPokemonStats(data.types);
-        generarUrl(props.pokemonName.toLowerCase());       
+        
            } 
-   function generarUrl(name)
-    {
-        let gifUrl='../img/pokeGif/'+name+'.gif';
-        setPokeUrl(gifUrl);
-    }
+   
     return (
         
         
