@@ -3,76 +3,62 @@ import './App.css';
 import firebase, {auth} from "./firebase/config";
 import SignIn from "./components/SignIn";
 import {Route, Switch, useHistory} from "react-router-dom";
-import Header from "./components/Header";
+
 import SignUp from "./components/SignUp";
 import PrivateRoute from "./components/PrivateRoute";
 import Panel from "./components/Panel";
-
-
-
-
-
 import Sidebar from './components/sidebar/sidebar';
 import Main from './components/main/main';
 
 
-export default class App extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        showPok:false,
-        showAbout:true,
+export default function App () 
+{
+    
+    let [showPok, setShowPok]=useState(false);
+    let [showAbout, setShowAbout]=useState(true);
+       
         
-      }
-    }
-  
-    showPoke=()=>
-    {
       
-      if (this.state.showPok===false)
+  function showPoke()
+      {
+      
+      if (showPok===false)
           {
-            this.setState({showPok:true});
-            this.setState({showAbout:false});
-            console.log("mostrando");
-            console.log("estado  "+this.state.showPok);
+            setShowPok(true);
+            setShowAbout(false);
           }
-      else if(this.state.showPok===true)
+      else if(showPok===true)
               {
-                this.setState({showPok:false});
-                console.log("ocultando");
-                console.log("estado  "+this.state.showPok);
+                
+                setShowPok(false);
+                setShowAbout(true);
               }    
       
       
     }
-    showAbout=()=>
+    function showAbo()
     {
       
-      if (this.state.showAbout===false)
+      if (showAbout===false)
           {
-            this.setState({showAbout:true});
-            this.setState({showPok:false});
-            console.log("mostrando");
-            console.log("estado  "+this.state.showAbout);
-          }
-      else if(this.state.showAbout===true)
+            setShowAbout(true);
+            setShowPok(false);
+                      }
+      else if(showAbout===true)
               {
-                this.setState({showAbout:false});
-                console.log("ocultando");
-                console.log("estado  "+this.state.showAbout);
+                setShowAbout(false);
+                setShowPok(true);
               }    
       
       
     }
     
-    render() {
-        return (
+    return (
             <div className="App">
               
-                <Sidebar clickPoke={this.showPoke} clickAbout={this.showAbout}/>
+                <Sidebar clickPoke={showPoke} clickAbout={showAbo}/>
                 
-                <Main show={this.state.showPok} about={this.state.showAbout} />
+                <Main show={showPok} about={showAbout} />
             </div>
         )
-    }
 }

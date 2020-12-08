@@ -3,18 +3,7 @@ import React from 'react';
 import './styles.css';
 
 
-export default class PrimaryCol extends React.Component {
-    constructor() {
-        super();
-        this.state = 
-        {
-            
-        }
-    
-    }
-
-
-    render() 
+export default function  PrimaryCol ()
     {
       
              return (
@@ -38,5 +27,4 @@ export default class PrimaryCol extends React.Component {
            </div>
             
         )
-    }
 }

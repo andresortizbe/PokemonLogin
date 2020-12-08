@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Pagination(props){
+export default function Pagination(props){
     
     
     
@@ -17,4 +17,3 @@ function Pagination(props){
     )
 }
 
-export default Pagination;

@@ -1,23 +1,12 @@
-import React from 'react';
 import { Link } from "react-router-dom";
+import React, {useState, useEffect} from 'react';
 import './styles.css';
 
 
-export default class PrimaryCol extends React.Component {
-    constructor() {
-        super();
-        this.state = 
-        {
-            
-        }
-    
-    }
-
-
-    render() 
+export default function NotLogged ()
     {
-      
-             return (
+    
+    return (
             
             <div className="aboutContainer">
                 
@@ -40,4 +29,4 @@ export default class PrimaryCol extends React.Component {
             
         )
     }
-}
+

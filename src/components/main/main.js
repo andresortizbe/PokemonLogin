@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import "./styles.css";
 import {Route, Switch, useHistory} from "react-router-dom";
 import firebase, {auth} from "../../firebase/config";
@@ -13,10 +13,10 @@ import PokemonDetail from "../allPoke/pokemonDetail"
 
 
 
+
 function Main (props) {
   
   let history = useHistory();
-  //Provedor de autenticacion con google
   let provider = new firebase.auth.GoogleAuthProvider();
   let facebookProvider = new firebase.auth.FacebookAuthProvider();
   let [user, setUser] = useState({});

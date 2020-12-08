@@ -1,55 +1,40 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import axios from "axios";
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-export default class pokemonDetail extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            pokemonDetails: [],
-            pokemonStats:[],
-            
-        }
+export default function PokemonDetail (props) {
+    const [pokemonDetails, setPokemonDetails] = useState([]);
+    const [pokemonStats, setPokemonStats] = useState([]);
+    const [pokeUrl,setPokeUrl]=useState("");
+
+
+    useEffect(async () =>  
+    { 
+        let url="https://pokeapi.co/api/v2/pokemon/"+props.pokemonName;
+        let response = await fetch(url);
+        let data = await response.json();
+        setPokemonDetails(data.stats);
+        
+        let response2 = await fetch(url);
+        data=await response2.json();
+        setPokemonStats(data.types);
+        generarUrl(props.pokemonName.toLowerCase());                
+    }, []);
+   function generarUrl(name)
+    {
+        let gifUrl='../img/pokeGif/'+name+'.gif';
+        setPokeUrl(gifUrl);
     }
-    componentDidMount() {
+    return (
         
-        let url="https://pokeapi.co/api/v2/pokemon/"+this.props.pokemonName;
-        fetch(url)
-            .then(response => response.json())
-            .then(data =>   {
-
-                             this.setState({ pokemonDetails: data.stats })
-                             console.log("el estado chimbo  "+ JSON.stringify(this.state.pokemonDetails));
-                            }
-             )
-            .catch(error => {
-                console.log(error);
-            })
-            fetch(url)
-            .then(response => response.json())
-            .then(data => this.setState({ pokemonStats: data.types }))
-            .catch(error => {
-                console.log(error);
-            })
-
-    }
-
-    render() {
         
-        let gifUrl='../img/pokeGif/'+this.props.pokemonName.toLowerCase()+'.gif';
-        
-        console.log(gifUrl);
-        
-        return (
-            <div className="detailsCont"><h2 className="detailTitle">{"  "+this.props.pokemonName.toUpperCase()}</h2>.
+            <div className="detailsCont"><h2 className="detailTitle">{"  "+props.pokemonName.toUpperCase()}</h2>.
                 <div className="img-cont">
-                <img className="img4 zoom" src={gifUrl} alt={this.props.pokemonName} />
+                <img className="img4 zoom" src={pokeUrl} alt={props.pokemonName} />
                 <div className="typeContainer">
                         {
-                          this.state.pokemonStats.map((poke)=>{
+                          pokemonStats.map((poke)=>{
                            return( <div className="divider"><div 
                             className={`typePoke ${poke.type.name} && 'poke.type.name'}`}></div>
                                       <h3 className="typeTitle">{poke.type.name.toUpperCase()}</h3>
@@ -61,7 +46,7 @@ export default class pokemonDetail extends React.Component {
                 </div>
                     <div className="statsContainer">
                         {
-                          this.state.pokemonDetails.map((poke)=>{
+                          pokemonDetails.map((poke)=>{
                            return( <div className="statsContainer">
                                         <h6>{poke.stat.name.toUpperCase()}</h6>
                                         <progress  id="poke.base_stat" 
@@ -85,6 +70,3 @@ export default class pokemonDetail extends React.Component {
             </div>
         )
     }
-
-}
-

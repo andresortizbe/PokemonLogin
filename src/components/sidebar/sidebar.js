@@ -3,7 +3,7 @@ import React from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
 
-const Sidebar = (props) => {
+export default function Sidebar (props) {
   return (
     <div className="t-sidebar">
       <div className="positionA">
@@ -43,4 +43,4 @@ const Sidebar = (props) => {
   );
 };
 
-export default Sidebar;
+
