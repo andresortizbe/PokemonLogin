@@ -9,8 +9,15 @@ export default function PokemonDetail (props) {
     const [pokeUrl,setPokeUrl]=useState("");
 
 
-    useEffect(async () =>  
-    { 
+    useEffect(() => {  
+    fetchPokemon();        
+        
+                 
+    });
+
+    async function fetchPokemon () {
+             
+    
         let url="https://pokeapi.co/api/v2/pokemon/"+props.pokemonName;
         let response = await fetch(url);
         let data = await response.json();
@@ -19,8 +26,8 @@ export default function PokemonDetail (props) {
         let response2 = await fetch(url);
         data=await response2.json();
         setPokemonStats(data.types);
-        generarUrl(props.pokemonName.toLowerCase());                
-    }, []);
+        generarUrl(props.pokemonName.toLowerCase());       
+           } 
    function generarUrl(name)
     {
         let gifUrl='../img/pokeGif/'+name+'.gif';

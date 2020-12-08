@@ -32,7 +32,7 @@ export default function AllPoke(props) {
       setPokemones(data);
     };
     getPokemons();
-  }, []);
+  });
 
   function changePage(currentPage) {
     setPokePage(currentPage);

@@ -24,7 +24,7 @@ export default function PrimaryCol ()
                 console.log(error);
             })
            
-          }, []);
+          });
 
     
      
