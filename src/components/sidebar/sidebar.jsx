@@ -1,12 +1,19 @@
 import React from "react";
 
 import "./styles.css";
-import { Link } from "react-router-dom";
+import Profile from "../profile"
+import { Link,useHistory } from "react-router-dom";
 
 export default function Sidebar (props) {
+  let history = useHistory();
   return (
     <div className="t-sidebar">
+      { 
+        props.loginCard ? (<Profile name={props.trainer} history={history} /> ) : null
+      }
+      
       <div className="positionA">
+        
         <Link to="/PokeDex">
           <img
             className="pokeIcon"

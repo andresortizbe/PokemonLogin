@@ -1,0 +1,61 @@
+.profileCard
+{   
+    margin-top: -12px;
+    border:dashed;
+}
+.picture
+{
+    width: 60%;
+}
+.logo
+{
+    width: 20%;
+    margin-right: -130px;
+}
+  .contextual-dropdown{
+    position: absolute;
+    top: 10%;
+    right: 12%;
+    
+  }
+  
+  .contextual-dropdown{
+    width: 65%;
+    background-color: white;
+    box-shadow: 1px 1px 8px #909090;
+    border-radius: 4px;
+    
+  }
+  
+   .selected{
+    background-color: #55b4e1;
+  }
+  
+  .contextual-container{
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    
+   
+  }
+  
+  .contextual-menu > svg{
+    width: 100px;
+  }
+  
+  .contextual-dropdown__row{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0.5em 1em;
+  }
+  
+  .contextual-dropdown__row>svg{
+    width: 10%;
+    margin-right: 5px;
+  }
+  
+  .contextual-dropdown__row:hover {
+    background-color: #d5d5d5;
+  }

@@ -24,12 +24,18 @@ function Main (props) {
   let [pokemonData,setPokemonData]=useState([]);
   
     
-
+  function sendTrainer(trainer)
+  {
+    props.setTrainer(trainer);
+    props.setLoginCard(true);
+    
+  }
   const signInGoogle = () => {
     auth.signInWithPopup(provider).then(result => {
       let user = result.user;
       setUser(user);
       setIsLogged(true);
+      sendTrainer(result.user.displayName);
       history.push('/pokeDex');
     }).catch(error => {
       setIsLogged(false);
@@ -43,6 +49,7 @@ function Main (props) {
       let user = result.user;
       setUser(user);
       setIsLogged(true);
+      sendTrainer(result.user.displayName);
       history.push('/pokeDex');
       console.log(user);
     }).catch(error => {
@@ -57,7 +64,7 @@ function Main (props) {
     {
       <Switch>
         <Route path="/" exact>
-            <SignIn signInGoogle={signInGoogle} signInFacebook={signInFacebook} setIsLogged={setIsLogged} history={history}/>
+            <SignIn signInGoogle={signInGoogle} signInFacebook={signInFacebook} setIsLogged={setIsLogged} setTrainer={sendTrainer}history={history} />
         </Route>
         
         <Route path="/Registro" exact>

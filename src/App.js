@@ -9,7 +9,9 @@ export default function App ()
     
     let [showPok, setShowPok]=useState(false);
     let [showAbout, setShowAbout]=useState(true);
-       
+    let [trainer,setTrainer]=useState("");   
+    let [loginCard,setLoginCard]=useState(false);
+    
         
       
   function showPoke()
@@ -48,8 +50,8 @@ export default function App ()
     
     return (
             <div className="App">
-                 <Sidebar clickPoke={showPoke} clickAbout={showAbo}/>
-                 <Main show={showPok} about={showAbout} />
+                 <Sidebar clickPoke={showPoke} clickAbout={showAbo} trainer={trainer} loginCard={loginCard} />
+                 <Main show={showPok} about={showAbout} setTrainer={setTrainer} setLoginCard={setLoginCard} />
             </div>
         )
 }
