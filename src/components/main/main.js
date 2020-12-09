@@ -14,13 +14,14 @@ import PokemonDetail from "../allPoke/pokemonDetail"
 
 
 
+
 function Main (props) {
   
   let history = useHistory();
   let provider = new firebase.auth.GoogleAuthProvider();
   let facebookProvider = new firebase.auth.FacebookAuthProvider();
   let [user, setUser] = useState({});
-  let [isLogged, setIsLogged] = useState(false);
+  
   let [pokemonData,setPokemonData]=useState([]);
   
     
@@ -34,11 +35,11 @@ function Main (props) {
     auth.signInWithPopup(provider).then(result => {
       let user = result.user;
       setUser(user);
-      setIsLogged(true);
+      props.setIsLogged(true);
       sendTrainer(result.user.displayName);
       history.push('/pokeDex');
     }).catch(error => {
-      setIsLogged(false);
+      props.setIsLogged(false);
       console.log(error);
     })
   }
@@ -48,7 +49,7 @@ function Main (props) {
      
       let user = result.user;
       setUser(user);
-      setIsLogged(true);
+      props.setIsLogged(true);
       sendTrainer(result.user.displayName);
       history.push('/pokeDex');
       console.log(user);
@@ -64,24 +65,24 @@ function Main (props) {
     {
       <Switch>
         <Route path="/" exact>
-            <SignIn signInGoogle={signInGoogle} signInFacebook={signInFacebook} setIsLogged={setIsLogged} setTrainer={sendTrainer}history={history} />
+            <SignIn signInGoogle={signInGoogle} signInFacebook={signInFacebook} setIsLogged={props.setIsLogged} setTrainer={sendTrainer}history={history} />
         </Route>
         
         <Route path="/Registro" exact>
           <SignUp />
         </Route>
-        <PrivateRoute path="/pokeDex" logged={isLogged} user={user}>
+        <PrivateRoute path="/pokeDex" logged={props.isLogged} user={user}>
                       <PrimaryCol/>                    
         </PrivateRoute>
-        <PrivateRoute path="/about" logged={isLogged} user={user}>
+        <PrivateRoute path="/about" logged={props.isLogged} user={user}>
                       <AboutCol/>
                       
         </PrivateRoute>
-        <PrivateRoute path="/todosPoke" logged={isLogged} user={user}>
+        <PrivateRoute path="/todosPoke" logged={props.isLogged} user={user}>
                       <AllPoke pokemonData={setPokemonData}/>
         </PrivateRoute>
         
-        <PrivateRoute path="/pokemones/:pokemonName" logged={isLogged} user={user}>
+        <PrivateRoute path="/pokemones/:pokemonName" logged={props.isLogged} user={user}>
                       <PokemonDetail pokemonName={pokemonData}/>      
         </PrivateRoute> 
       </Switch>

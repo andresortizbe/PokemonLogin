@@ -52,6 +52,7 @@ function handleCloseModal ()  {
         return (
         <div className={`pokeCard `}>
            <div className="title-section"> <div className="pokeId"><h4 className="number">{pokeCode(props.img)}</h4></div>
+            
             <h3 className="pokeTitle">{props.name.toUpperCase()}</h3></div>
             <img className="img zoom" src={props.img} alt={props.name} />
             <img className="details" src={'/img/icons/pokedex.png'} alt="detalles" onClick={handleOpenModal}/>

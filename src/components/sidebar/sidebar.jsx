@@ -9,7 +9,7 @@ export default function Sidebar (props) {
   return (
     <div className="t-sidebar">
       { 
-        props.loginCard ? (<Profile name={props.trainer} history={history} /> ) : null
+        props.loginCard ? (<Profile name={props.trainer} logOut={props.logOut} /> ) : null
       }
       
       <div className="positionA">
