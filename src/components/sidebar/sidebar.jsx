@@ -2,10 +2,10 @@ import React from "react";
 
 import "./styles.css";
 import Profile from "../profile"
-import { Link,useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Sidebar (props) {
-  let history = useHistory();
+  
   return (
     <div className="t-sidebar">
       { 
