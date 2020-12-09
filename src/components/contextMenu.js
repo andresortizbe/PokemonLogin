@@ -1,7 +1,7 @@
 import React from 'react';
 import './profile.css';
 import {LogoutOutline} from '@graywolfai/react-heroicons';
-import firebase  from "../firebase/config";
+
 export default function ContextMenu(props) {
   
     
