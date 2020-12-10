@@ -12,6 +12,7 @@ export default function App ()
     let [showAbout, setShowAbout]=useState(true);
     let [trainer,setTrainer]=useState("");   
     let [loginCard,setLoginCard]=useState(false);
+    let [image,setImage]=useState("");
     let [isLogged, setIsLogged] = useState(false);    
   function logOut()
   {
@@ -63,13 +64,20 @@ export default function App ()
     
     return (
             <div className="App">
-                 <Sidebar clickPoke={showPoke} clickAbout={showAbo} trainer={trainer} loginCard={loginCard} logOut={logOut} />
+                 <Sidebar 
+                 clickPoke={showPoke} 
+                 clickAbout={showAbo} 
+                 trainer={trainer} 
+                 loginCard={loginCard} 
+                 logOut={logOut}
+                 imageUrl={image}/>
                  <Main show={showPok} 
                  about={showAbout} 
                  setTrainer={setTrainer} 
                  setLoginCard={setLoginCard} 
                  isLogged={isLogged}
                  setIsLogged={setIsLogged}
+                 setImage={setImage}
                  />
             </div>
         )

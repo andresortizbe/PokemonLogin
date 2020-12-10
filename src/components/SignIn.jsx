@@ -58,9 +58,10 @@ const handlePassword = (event) => {
     firebase.auth().signInWithEmailAndPassword(`${email}`,`${password}`)
       .then((response) => 
           {
-            console.log(JSON.stringify(response.user.email));
+            console.log(JSON.stringify(response.user));
             props.setIsLogged(true);
-            props.setTrainer(response.user.email);
+            props.sendImage(response.user.photoURL);
+            props.setTrainer(response.user.displayName);
             props.history.push('/pokeDex');
           })
       .catch((error) =>{ console.log(error);

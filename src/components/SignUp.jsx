@@ -5,12 +5,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-
+import {useHistory} from "react-router-dom";
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import  {auth} from "../firebase/config";
+import  firebase, {auth} from "../firebase/config";
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -36,7 +37,9 @@ export default function SignUp() {
   const classes = useStyles();
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
-  
+  const[name,setName]=useState("");
+  let history = useHistory();
+
   const handleEmail = (event) => {
     const text = event.target.value;
     setemail(text)
@@ -47,17 +50,31 @@ const handlePassword = (event) => {
   setpassword(text)
   
 };
+const handleName = (event) => {
+  const text = event.target.value;
+  setName(text)
+  console.log("nombre de user:  "+name)
+  
+};
   const register = (event) => {
     event.preventDefault();
     console.log(email)
-    auth.createUserWithEmailAndPassword(`${email}`,`${password}`).then(
-     
-        response => {
-          if(response)
-            console.log(response);
-        }
-    ).catch((error) =>{ console.log(error);
-      alert(error.message)});
+    auth.createUserWithEmailAndPassword(`${email}`,`${password}`)
+    
+    .then((response => {
+          let userObj=firebase.auth().currentUser;
+          userObj.updateProfile({displayName:name})
+          console.log(response);
+        })
+    )
+    .then((response => {
+      history.push("/");
+      
+    })
+)
+.catch((error) =>{ console.log(error);
+  alert(error.message)});
+    
   }
   return (
     <div className="signUp">
@@ -83,6 +100,7 @@ const handlePassword = (event) => {
                 id="firstName"
                 label="Nombre"
                 autoFocus
+                onChange={handleName}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
