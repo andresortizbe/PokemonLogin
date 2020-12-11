@@ -79,7 +79,7 @@ function Main (props) {
                     sendImage={sendImage} />
         </Route>
         
-        <Route path="/Registro" exact>
+        <Route path="/registro" exact>
           <SignUp />
         </Route>
         <PrivateRoute path="/pokeDex" logged={props.isLogged} user={user}>
